@@ -29,7 +29,7 @@ module SolidStackWeb
     # UTF-8 (lossless; the underlying data is UTF-8 source text) before it
     # reaches the view. dup keeps the ActiveRecord attribute string unmutated.
     def to_utf8_text(value)
-      value.to_s.dup.force_encoding("UTF-8")
+      value.to_s.dup.force_encoding("UTF-8").scrub
     end
 
     def format_duration(seconds)
